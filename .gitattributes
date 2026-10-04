@@ -1,0 +1,8 @@
+* text=auto
+*.ahk text eol=crlf
+*.ps1 text eol=crlf
+*.ico binary
+*.dll binary
+*.lib binary
+*.mp3 binary
+*.wav binary

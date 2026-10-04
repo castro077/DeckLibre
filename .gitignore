@@ -1,0 +1,27 @@
+# Configuracion personal (tiene los teclados de tu PC)
+DeckLibre.ini
+LaptopDeck.ini
+Respaldos/
+
+# Archivos que crea el programa
+registro.txt
+registro_anterior.txt
+diagnostico_audio.txt
+recursos_diagnostico.txt
+
+# Tus sonidos
+Sonidos/*
+!Sonidos/.gitkeep
+
+# Librerias que no se necesitan en tiempo de ejecucion
+Lib/x64/*.lib
+Lib/x86/*.lib
+
+# Notas rapidas del widget (son personales)
+notas.txt
+
+# Basura de Windows y copias
+Thumbs.db
+desktop.ini
+*.bak
+*.tmp
