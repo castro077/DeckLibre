@@ -17,7 +17,7 @@ Persistent
 global APP := "DeckLibre"
 global CFG := A_ScriptDir "\DeckLibre.ini"
 
-global AHI := AutoHotInterception()
+global AHI := IniciarAHI()
 
 global gBotoneraId := 0          ; ID de Interception del teclado botonera
 global gPrincipalHandle := ""        ; Handle del teclado principal, con el que escribes (para el modo automatico)
