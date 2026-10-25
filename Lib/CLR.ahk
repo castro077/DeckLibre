@@ -19,8 +19,12 @@ CLR_LoadLibrary(AssemblyName, AppDomain:=0)
 	typeofAssembly := AppDomain.GetType().Assembly.GetType()
 	try
 		return typeofAssembly.InvokeMember_3("LoadWithPartialName", 0x158, null, null, args)
-	catch
+	try
 		return typeofAssembly.InvokeMember_3("LoadFrom", 0x158, null, null, args)
+	; DeckLibre: LoadFrom se niega a cargar un DLL que Windows sigue marcando como
+	; descargado de internet (o que esta en una carpeta de red). UnsafeLoadFrom
+	; carga el mismo archivo sin esa revision, asi no depende de desbloquearlo.
+	return typeofAssembly.InvokeMember_3("UnsafeLoadFrom", 0x158, null, null, args)
 }
 
 CLR_CreateObject(Assembly, TypeName, Args*)

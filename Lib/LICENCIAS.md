@@ -7,6 +7,8 @@ Los archivos de esta carpeta **no son parte de DeckLibre**: son de otros proyect
 `AutoHotInterception.ahk`, `AutoHotInterception.dll`, `CLR.ahk` y `Unblocker.ps1`
 vienen de [AutoHotInterception](https://github.com/evilC/AutoHotInterception), de Clive Galway (evilC).
 
+Único cambio: en `CLR.ahk`, si `LoadFrom` falla, `CLR_LoadLibrary` intenta `UnsafeLoadFrom`, para que el `.dll` cargue aunque Windows lo siga marcando como descargado de internet.
+
 ```
 MIT License
 

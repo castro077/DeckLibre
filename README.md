@@ -359,7 +359,9 @@ Los perfiles se guardan igual, en secciones con el nombre del programa, por ejem
 ## Problemas comunes
 
 **Sale un error al abrir que dice que no carga `AutoHotInterception.dll`**
-Faltó desbloquear los `.dll` (paso 4) o no está instalado el driver Interception (paso 2, y reiniciar).
+- DeckLibre ya lo carga aunque Windows lo marque como descargado de internet, así que lo más probable es el antivirus: revisa **Seguridad de Windows → Protección contra virus y amenazas → Historial de protección** y permítelo si aparece.
+- Revisa que la carpeta `Lib` esté completa (vuelve a descomprimir el ZIP) y que no esté en una unidad de red.
+- Si el error es otro, revisa que esté instalado el driver Interception (paso 2, y reiniciar).
 
 **Las teclas de la botonera no hacen nada**
 - Revisa que esté en modo botonera (ícono azul).

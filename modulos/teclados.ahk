@@ -4,6 +4,24 @@
 ; =====================================================================
 
 ; =====================================================================
+;  AUTOHOTINTERCEPTION
+; =====================================================================
+; Si AutoHotInterception.dll no carga, AutoHotkey solo muestra un error de .NET
+; que no dice nada ("excepción en el destino de la invocación"). Aqui se explica.
+IniciarAHI() {
+    try
+        return AutoHotInterception()
+    catch as e {
+        Registrar("No cargó AutoHotInterception.dll: " DescribirError(e))
+        MsgBox("No se pudo cargar AutoHotInterception.dll, la librería que conecta DeckLibre con el driver Interception.`n`n"
+            . "• Revisa si el antivirus lo bloqueó: Seguridad de Windows → Protección contra virus y amenazas → Historial de protección. Si aparece, permítelo o agrega la carpeta de DeckLibre a las exclusiones.`n"
+            . "• Si no aparece ahí, vuelve a descargar el ZIP y descomprímelo en una carpeta de tu PC (no en una unidad de red).`n`n"
+            . "Detalle: " DescribirError(e), APP, "Iconx")
+        ExitApp
+    }
+}
+
+; =====================================================================
 ;  DISPOSITIVOS
 ; =====================================================================
 ResolverBotonera() {
